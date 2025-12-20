@@ -125,7 +125,7 @@ async function sendArgoOfflineNotification(config, argoStatus) {
 async function sendArgoRecoveryNotification(config) {
   const message = `✅ <b>ARGO 隧道恢复</b>\n\n` +
                  `🌐 域名: <code>${config.ARGO_DOMAIN}</code>\n` +
-                 `📊 状态: <code>404 (正常)</code>\n` +
+                 `📊 状态: <code>404|530 (正常)</code>\n` +
                  `⏰ 时间: ${new Date().toLocaleString('zh-CN')}\n\n` +
                  `🎉 节点已恢复正常`;
   
