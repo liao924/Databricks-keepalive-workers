@@ -125,7 +125,7 @@ async function sendArgoOfflineNotification(config, argoStatus) {
 async function sendArgoRecoveryNotification(config) {
   const message = `✅ <b>ARGO 隧道恢复</b>\n\n` +
                  `🌐 域名: <code>${config.ARGO_DOMAIN}</code>\n` +
-                 `📊 状态: <code>404|530 (正常)</code>\n` +
+                 `📊 状态: <code>404|502 (正常)</code>\n` +
                  `⏰ 时间: ${new Date().toLocaleString('zh-CN')}\n\n` +
                  `🎉 节点已恢复正常`;
   
@@ -261,7 +261,7 @@ async function smartCheckAndStartApps(config) {
   const statusChanged = hasArgoStatusChanged(currentArgoStatus);
   
   if (currentArgoStatus.online) {
-    console.log(`✅ ARGO 域名 ${config.ARGO_DOMAIN} 状态正常 (404)`);
+    console.log(`✅ ARGO 域名 ${config.ARGO_DOMAIN} 状态正常`);
     
     // 如果状态从离线变为在线，发送恢复通知
     if (statusChanged && lastArgoStatus && !lastArgoStatus.online) {
